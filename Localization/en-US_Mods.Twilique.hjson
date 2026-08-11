@@ -1,0 +1,20 @@
+DamageClasses.AstrologerDamage.DisplayName: Astrologer Damage
+
+Items: {
+	StarDust: {
+		DisplayName: Star Dust
+		Tooltip: ""
+	}
+
+	StarFragments: {
+		DisplayName: Star Fragments
+		Tooltip: ""
+	}
+
+	RustyHunter: {
+		DisplayName: Rusty Hunter
+		Tooltip: ""
+	}
+}
+
+Projectiles.RustyHunter.DisplayName: Rusty Hunter
