@@ -316,7 +316,7 @@ namespace Twilique.Content.Projectiles.Melee
                 new Vector2(TextureAssets.Projectile[Type].Value.Width / 2, TextureAssets.Projectile[Type].Value.Height / 2 / Main.projFrames[Type]) +
                     ((float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + 1.570f).ToRotationVector2(),
                 new Vector2(1, 1),
-                SpriteEffects.None, 0);
+                SpriteEffects.None, 0); 
 
             return false;
         }
