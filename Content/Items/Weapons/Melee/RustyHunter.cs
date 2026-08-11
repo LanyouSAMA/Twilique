@@ -13,7 +13,7 @@ namespace Twilique.Content.Items.Weapons.Melee
         {
             Item.damage = 40;
             Item.DamageType = DamageClass.Melee;
-            Item.crit = 33;
+            Item.crit = 0;
             Item.width = 40;
             Item.height = 38;
             Item.scale = 1f;
