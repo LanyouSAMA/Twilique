@@ -1,9 +1,10 @@
-using System;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,42 +14,143 @@ namespace Twilique.Content.Projectiles.Melee
     {
         public override void SetDefaults()
         {
-            Projectile.width = 30;
-            Projectile.height = 30; //Í¬Àí£¬ÌùÍ¼µÄ¿íÓë¸ß
-            Projectile.scale = 1; //´óĞ¡
-            Projectile.friendly = true; //µ¯Ä»ÊÇ·ñ¶ÔµĞ·½Ôì³ÉÉËº¦
-            Projectile.hostile = false; //µ¯Ä»ÊÇ·ñ¶ÔÓÑ·½Ôì³ÉÉËº¦
-            Projectile.penetrate = -1; //µ¯Ä»¿É´©Í¸µÄµĞ¹ÖÊıÁ¿£¬ÉèÎª-1ÔòÎªÎŞÏŞ
-            Projectile.tileCollide = false; //µ¯Ä»ÄÜ·ñÊÜÎï¿é×èµ²
-            Projectile.timeLeft = 8; //µ¯Ä»×Ô¶¯ÏûÊ§µÄÊ±¼ä
-            Projectile.aiStyle = -1; //µ¯Ä»Ä£·ÂµÄAI¡£-1ÎªÎŞ
-            Projectile.alpha = 0; //µ¯Ä»µÄÍ¸Ã÷¶È
-            Projectile.tileCollide = false; //Ê¹µ¯Ä»¿ÉÒÔ´©Ç½
+            Projectile.width = 42; // æŠ•å°„ç‰©ç¢°æ’ç®±å®½åº¦
+            Projectile.height = 42; // æŠ•å°„ç‰©ç¢°æ’ç®±é«˜åº¦
+            Projectile.scale = 1.2f; // ç¼©æ”¾
+            Projectile.friendly = true; // æ˜¯å¦å¯¹æ•Œæ€ªé€ æˆä¼¤å®³
+            Projectile.hostile = false; // æ˜¯å¦å¯¹ç©å®¶é€ æˆä¼¤å®³
+            Projectile.penetrate = -1; // ç©¿é€æ¬¡æ•°ï¼Œ-1 è¡¨ç¤ºæ— é™ç©¿é€
+            Projectile.tileCollide = false; // æ˜¯å¦ä¸æ–¹å—ç¢°æ’
+            Projectile.timeLeft = 99999; // å­˜åœ¨æ—¶é—´ï¼Œå®é™…ç”± AI æ§åˆ¶
+            Projectile.aiStyle = -1; // AI ç±»å‹ï¼Œ-1 è¡¨ç¤ºè‡ªå®šä¹‰
+            Projectile.alpha = 0; // é€æ˜åº¦
+            Projectile.tileCollide = false; // å…è®¸ç©¿å¢™
+
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 8;
+        }
+
+        Player player => Main.player[Projectile.owner]; // è¯¥æŠ•å°„ç‰©æ‰€å±ç©å®¶
+
+        public override void OnSpawn(IEntitySource source) // æŠ•å°„ç‰©ç”Ÿæˆæ—¶æ‰§è¡Œ
+        {
+            Projectile.Center -= Projectile.velocity; // å‡ºç”Ÿæ—¶æ²¿åˆé€Ÿåº¦æ–¹å‘å›é€€ä¸€æ ¼
+            Projectile.rotation += 0.785f; // ç”±äºè´´å›¾æ˜¯æ–œçš„ï¼Œåˆå§‹é¡ºæ—¶é’ˆæ—‹è½¬ 45 åº¦
+        }
+
+        public override void AI() // æ¯å¸§æ‰§è¡Œä¸€æ¬¡
+        {
+            // å¼ºåˆ¶ç»´æŒä½¿ç”¨åŠ¨ä½œ
+            player.itemTime = 2;
+
+            // ä» ai[0] è¯»å–è“„åŠ›/åˆºå‡»è®¡æ—¶å™¨
+            int stabTimer = (int)Projectile.ai[0];
+
+            // è®¡ç®—å½“å‰ç„å‡†æ–¹å‘
+            Vector2 aimDirection = (Main.MouseWorld - player.MountedCenter).SafeNormalize(Vector2.UnitX);
+
+            // ç©å®¶è·Ÿéšç„å‡†æ–¹å‘è½¬å‘
+            if (aimDirection.X < 0)
+            {
+                player.direction = -1;
+            }
+            else
+            {
+                player.direction = 1;
+            }
+
+            bool holding = player.controlUseItem && !player.HeldItem.IsAir;
+
+            stabTimer++;
+
+            int mod = player.itemTimeMax > 0 ? player.itemTimeMax : 12;
+
+            if (!holding && (stabTimer % mod == 0))
+            {
+                Projectile.Kill();
+                return;
+            }
+
+            if (holding && (stabTimer % mod == 0))
+            {
+                float angleDeflect = Main.rand.NextFloat(-0.2f, 0.2f); // è§’åº¦åè½¬
+                Vector2 stabDir = aimDirection.RotatedBy(angleDeflect);
+
+                Projectile.Center = player.MountedCenter - stabDir * 21f;
+                Projectile.velocity = stabDir * 9f;
+            }
+
+            // åˆºå‡»è¿‡ç¨‹ä¸­åšä¸€ä¸ªå‰æ¨åæ”¶çš„èŠ‚å¥
+            int phase = stabTimer % mod;
+            if (phase < mod / 2)
+            {
+                Projectile.Center += Projectile.velocity * 0.5f; // å‰æ¨
+            }
+            else
+            {
+                Projectile.Center -= Projectile.velocity * 0.3f; // å›æ”¶
+            }
+
+            Projectile.rotation = Projectile.velocity.ToRotation() + 0.785f; // è®©æŠ•å°„ç‰©å§‹ç»ˆæœå‘è¿åŠ¨æ–¹å‘
+            Projectile.Center += player.velocity * 0.6f; // è·Ÿéšç©å®¶ç§»åŠ¨
+
+
+            // è®©ç©å®¶æ‰‹éƒ¨åŠ¨ä½œè·ŸéšæŠ•å°„ç‰©æœå‘
+            // é¼ æ ‡åœ¨ç©å®¶å·¦ä¾§æ—¶ï¼Œå°†è§’åº¦åè½¬ 180 åº¦ï¼Œé¿å…è´´å›¾æœå‘å’Œå®é™…æŒ¥èˆæ–¹å‘é”™ä½
+            if (aimDirection.X < 0) player.itemRotation = Projectile.rotation - 0.785f + MathHelper.Pi;
+            else player.itemRotation = Projectile.rotation - 0.785f;
+
+            Projectile.ai[0] = stabTimer;
         }
 
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             modifiers.ModifyHitInfo += Modifiers_ModifyHitInfo;
         }
+
         private void Modifiers_ModifyHitInfo(ref NPC.HitInfo info)
         {
             if (info.Crit)
             {
-                info.Damage *= 4;
+                info.Damage *= 4; // æš´å‡»æ—¶ä¼¤å®³ä¹˜ 4
             }
         }
 
-        Player player => Main.player[Projectile.owner]; //ÉèÖÃÒ»¸öÃûÎªplayerµÄ±äÁ¿²¢½«Æä¼ÇÂ¼Îª·¢ÉäÕâ¸öµ¯Ä»µÄÍæ¼Ò
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            // å‘½ä¸­ç‰¹æ•ˆ
+            Vector2 dir = Projectile.velocity;
+            if (dir.Length() < 0.1f)
+                dir = (Main.MouseWorld - player.MountedCenter).SafeNormalize(Vector2.UnitX); // é€Ÿåº¦è¿‡å°æ—¶æ”¹ç”¨ç„å‡†æ–¹å‘
+            dir.Normalize();
 
-        public override void OnSpawn(IEntitySource source) //OnSpawn¹³×Ó»áÔÚµ¯Ä»Éú³ÉÊ±Ö´ĞĞ
-        {
-            Projectile.Center -= Projectile.velocity; //Ê¹µ¯Ä»Éú³ÉÊ±ÔÚ³õÊ¼ËÙ¶È·½ÏòÉÏµ¹ÍË
-            Projectile.rotation += 0.785f; //ÒòÎªµ¯Ä»µÄÌùÍ¼ÊÇĞ±×ÅµÄ£¬ËùÒÔÔÚÉú³ÉÊ±½«µ¯Ä»Ë³Ê±ÕëĞı×ª45¶È
+            for (int i = 0; i < 15; i++)
+            {
+                var dust = Dust.NewDustDirect(
+                    Projectile.Center + (Projectile.rotation - 0.785f).ToRotationVector2() * (float)Math.Sqrt(Projectile.width * Projectile.height) * Projectile.scale,
+                    2, 2,
+                    DustID.PurpleCrystalShard,
+                    0f, 0f, 100, default, 1f);
+                dust.velocity = Main.rand.NextVector2Circular(5f, 5f) + Projectile.velocity * -1f;
+                dust.noGravity = true;
+            }
         }
-        public override void AI() //AI¹³×Ó»áÔÚµ¯Ä»´æÔÚµÄÃ¿Ò»Ö¡¶¼Ö´ĞĞÒ»´Î
+
+        public override bool PreDraw(ref Color lightColor)
         {
-            Projectile.rotation = Projectile.velocity.ToRotation() + 0.785f; //Ê¹µ¯Ä»Ê±¿Ì³¯ÏòÆäÔËĞĞ·½Ïò
-            Projectile.Center += player.velocity; //Ê¹µ¯Ä»Ê¼ÖÕ¸úËæÍæ¼Ò
+            Main.EntitySpriteDraw(
+                TextureAssets.Projectile[Type].Value,
+                Projectile.Center - Main.screenPosition,
+                new Rectangle(0, TextureAssets.Projectile[Type].Value.Height / Main.projFrames[Type] * Projectile.frame,
+                    TextureAssets.Projectile[Type].Value.Width, TextureAssets.Projectile[Type].Value.Height),
+                lightColor,
+                Projectile.rotation,
+                new Vector2(TextureAssets.Projectile[Type].Value.Width / 2, TextureAssets.Projectile[Type].Value.Height / 2 / Main.projFrames[Type]) +
+                    ((float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + 1.570f).ToRotationVector2(),
+                new Vector2(1, 1),
+                SpriteEffects.None, 0);
+
+            return false; // è¿”å› false é˜»æ­¢ tModLoader ä½¿ç”¨é»˜è®¤ç»˜åˆ¶
         }
     }
 }
