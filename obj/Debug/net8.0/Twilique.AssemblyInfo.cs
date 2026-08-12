@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Twilique")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ef5bae7d0e1a6f588f310c0c531d04ea8697373")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb8eb04718392d7bcb2d7dbfcab129e2a3068af8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Twilique")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Twilique")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
