@@ -33,7 +33,7 @@ namespace Twilique.Content.Items.Weapons.Melee
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();//合成配方名字
-            //recipe.AddIngredient(ModContent.ItemType<IridiumBar>(), 20);//合成材料
+            recipe.AddIngredient(ModContent.ItemType<IridiumBar>(), 20);//合成材料
             recipe.AddTile(TileID.MythrilAnvil);//制作站
             recipe.Register();
         }

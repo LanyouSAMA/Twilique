@@ -25,6 +25,16 @@ Items: {
 		DisplayName: Iridium Needle
 		Tooltip: ""
 	}
+
+	TigermarkRound: {
+		DisplayName: Tigermark Round
+		Tooltip: ""
+	}
+
+	IridiumBar: {
+		DisplayName: Iridium Bar
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
