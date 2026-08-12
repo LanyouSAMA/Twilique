@@ -1,0 +1,13 @@
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\bin\Debug\net8.0\Twilique.deps.json
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\bin\Debug\net8.0\Twilique.dll
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\bin\Debug\net8.0\Twilique.pdb
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.csproj.AssemblyReference.cache
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.AssemblyInfoInputs.cache
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.AssemblyInfo.cs
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.csproj.CoreCompileInputs.cache
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.sourcelink.json
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.dll
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\refint\Twilique.dll
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\Twilique.pdb
+C:\Users\18067\Documents\My Games\Terraria\tModLoader\ModSources\Twilique\obj\Debug\net8.0\ref\Twilique.dll
