@@ -1,7 +1,10 @@
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.ObjectData;
 
 namespace Twilique.Content.Tiles
 {
@@ -9,29 +12,31 @@ namespace Twilique.Content.Tiles
 	{
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = false;//是否为实体
-            Main.tileSolidTop[Type] = true;//顶端能否站立
-            Main.tileNoAttach[Type] = true;//能否在附近放置方块
-            Main.tileTable[Type] = false;//能否当做桌子
-            Main.tileLavaDeath[Type] = false;//能否被岩浆破坏
-            Main.tileFrameImportant[Type] = true;//是否自动选帧 如果是true就显示随机纹理
-                                                 //(但我只画了一个纹理嘻嘻)
-            Main.tileCut[Type] = false;//能否被武器破坏
-            Main.tileBlockLight[Type] = false;//是否阻挡光源
-            TileID.Sets.Ore[Type] = true;//是否判定为矿石(可以被金属探测器探测)
-                                         //这一条会无视"TileObjectData.newTile.CopyForm"里面填的"TileObjectData.Style" ,会按1x1的大小探测
-                                         //但是方块大小依然是"TileObjectData.Style"的大小,纹理坐标会读取到边界外面(没看懂)
-                                         //所以物块边界是棕色会怎么样啊
-            Main.tileOreFinderPriority[Type] = 114;//金属探测器的优先级
-                                                   //如果写了这一条，就算"TileID.Sets.Ore[Type] = false;"依然会被金属探测器探测
-            Main.tileSpelunker[Type] = true;//是否被洞穴探险药水点亮
-            Main.tileShine2[Type] = true;//是否被洞穴探险荧光棒高亮
-            Main.tileShine[Type] = 30;//方块闪烁白光点的频率
-            Main.tileMergeDirt[Type] = false;//会不会和土块连接
-            Main.tileLighted[Type] = false;//是否发光
+            Main.tileShine[Type] = 1100;
+            Main.tileSolid[Type] = true;
+            Main.tileSolidTop[Type] = true;
+            Main.tileFrameImportant[Type] = true;
+
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+            TileObjectData.newTile.StyleHorizontal = true;
+            TileObjectData.newTile.LavaDeath = false;
+            TileObjectData.addTile(Type);
+
+            VanillaFallbackOnModDeletion = TileID.MetalBars;
 
             //DustType = ModContent.DustType<Content.Blocks.IridiumBarBlock>();
-            RegisterItemDrop(ModContent.ItemType<Content.Items.IridiumBar>(), 1);
+            RegisterItemDrop(ModContent.ItemType<Content.Items.IridiumBar>());
+            AddMapEntry(new Color(200, 200, 200), Language.GetText("占位符，记得修改"));
+        }
+        public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
+        {
+            // This check will destroy this tile if the tile below has become sloped such that it doesn't have a solid top side.
+            // This is necessary in this case because Bar tiles can be placed on top of each other but can also be hammered to be half bricks despite being tileSolidTop.
+            if (!WorldGen.SolidTileAllowBottomSlope(i, j + 1))
+            {
+                WorldGen.KillTile(i, j);
+            }
+            return true;
         }
     }
 }

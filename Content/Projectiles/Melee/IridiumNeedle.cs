@@ -97,7 +97,7 @@ namespace Twilique.Content.Projectiles.Melee
 
             // 让玩家手部动作跟随投射物朝向
             // 鼠标在玩家左侧时，将角度反转 180 度，避免贴图朝向和实际挥舞方向错位
-            if (aimDirection.X < 0) player.itemRotation = Projectile.rotation - 0.785f + MathHelper.Pi;
+            if (aimDirection.X <= 0) player.itemRotation = Projectile.rotation - 0.785f + MathHelper.Pi;
             else player.itemRotation = Projectile.rotation - 0.785f;
 
             Projectile.ai[0] = stabTimer;

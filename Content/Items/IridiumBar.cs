@@ -17,7 +17,7 @@ namespace Twilique.Content.Items
             Item.placeStyle = ItemUseStyleID.Swing;//放置动作
             Item.createTile = ModContent.TileType<Content.Tiles.IridiumBarBlock>();//放置物块
             Item.useTime = 10;//使用时间
-            Item.useAnimation = 10;//使用动画时间
+            Item.useAnimation = 15;//使用动画时间
             Item.value = Item.buyPrice(0, 7, 0, 0);//价格
             Item.rare = ItemRarityID.LightPurple;//稀有度
             Item.autoReuse = true;//自动连发
