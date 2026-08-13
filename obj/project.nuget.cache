@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RLOQ+r0JzQA=",
+  "dgSpecHash": "0kHqtOJ0C70=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Twilique\\Twilique.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.30\\microsoft.windowsdesktop.app.ref.8.0.30.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.30\\microsoft.netcore.app.ref.8.0.30.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.30\\microsoft.aspnetcore.app.ref.8.0.30.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\18067\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Twilique\\Twilique.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

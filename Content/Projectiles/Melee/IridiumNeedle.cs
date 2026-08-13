@@ -38,7 +38,7 @@ namespace Twilique.Content.Projectiles.Melee
             Projectile.rotation += 0.785f; // 由于贴图是斜的，初始顺时针旋转 45 度
         }
 
-        public override void AI() // 每帧执行一次
+        public override void AI() //弹幕AI
         {
             // 强制维持使用动作
             player.itemTime = 2;

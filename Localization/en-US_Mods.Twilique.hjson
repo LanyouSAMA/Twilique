@@ -35,9 +35,20 @@ Items: {
 		DisplayName: Iridium Bar
 		Tooltip: ""
 	}
+
+	Tobacco: {
+		DisplayName: Tobacco
+		Tooltip: ""
+	}
+
+	PipeTomahawk: {
+		DisplayName: Pipe Tomahawk
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
 	RustyHunter.DisplayName: Rusty Hunter
 	IridiumNeedle.DisplayName: Iridium Needle
+	PipeTomahawk.DisplayName: Pipe Tomahawk
 }
