@@ -33,20 +33,27 @@ namespace Twilique.Content.Projectiles.Melee
         Player player => Main.player[Projectile.owner]; // 获取发射该投射物的玩家
         public override void AI()//弹幕AI
         {
-            Projectile.ai[0] += 1f;//计时器
-            if (Projectile.ai[0] >= 60f)//如果计时器大于等于60帧
+            if (Projectile.ai[1] == 1)
             {
-                Projectile.Center -= Projectile.velocity;//回到原来的位置
+                //如果玩家使用鼠标右键
             }
+            else
+            {
+                Projectile.ai[0] += 1f;//计时器
+                if (Projectile.ai[0] >= 60f)//如果计时器大于等于60帧
+                {
+                    Projectile.velocity = Projectile.Center.DirectionTo(player.Center) * 5f;//回到原来的位置
+                }
 
-            if (player.direction == 1)//如果玩家面朝右方
-            {
-                Projectile.rotation += 0.1f;//设置旋转角度
-            }
-            else if (player.direction == -1)//如果玩家面朝左方
-            {
-                Projectile.rotation += -0.1f;//设置旋转角度
-                Projectile.direction = Projectile.spriteDirection = -1;//翻转弹幕
+                if (Projectile.velocity.X > 0)//如果玩家面朝右方
+                {
+                    Projectile.rotation += 0.1f;//设置旋转角度
+                }
+                else if (Projectile.velocity.X < 0)//如果玩家面朝左方
+                {
+                    Projectile.rotation += -0.1f;//设置旋转角度
+                    Projectile.direction = Projectile.spriteDirection = -1;//翻转弹幕
+                }
             }
         }
 
@@ -67,7 +74,7 @@ namespace Twilique.Content.Projectiles.Melee
 
             if (player.altFunctionUse == 2)
             {
-
+                //如果玩家使用鼠标右键
             }
         }
 
