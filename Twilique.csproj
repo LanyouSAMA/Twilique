@@ -7,10 +7,16 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Content\NPCs\BOSS\ArkVision0301.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="Content\NPCs\BOSS\ArkVision0301.cs" />
+	</ItemGroup>
 
 	<!-- References -->
 	<ItemGroup>
-		
+	  <None Include="Content\NPCs\BOSS\ArkVision0301.cs" />
 	</ItemGroup>
 
 </Project>
