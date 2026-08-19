@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Mono.Cecil.Cil;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -65,6 +66,17 @@ namespace Twilique.Content.Items.Weapons.Melee
             {
                 //player.AddBuff(ModContent.BuffType<Content.>(), 18000);//对玩家施加5分钟buff
             }
+        }
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                Projectile.NewProjectile(source, position, velocity, type, damage, knockback, ai0: 1f);
+
+                return false;
+            }
+            return base.Shoot(player, source, position, velocity, type, damage, knockback);
         }
 
         public override Vector2? HoldoutOffset()
