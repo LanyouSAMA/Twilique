@@ -9,7 +9,7 @@ namespace ArkVision.NPCs.BOSS
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Primary Boss");
+            // DisplayName.SetDefault("Primary Boss");
             Main.npcFrameCount[NPC.type] = 1; // Set the number of frames for the NPC's animation
         }
         public override void SetDefaults()

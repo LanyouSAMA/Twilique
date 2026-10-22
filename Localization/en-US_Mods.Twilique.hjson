@@ -45,10 +45,206 @@ Items: {
 		DisplayName: Pipe Tomahawk
 		Tooltip: ""
 	}
+
+	SandStorm: {
+		DisplayName: Sand Storm
+		Tooltip:
+			'''
+			Becomes stronger and has a 50% chance to not consume ammo during a sand storm.
+			"She shot sand at me and asked if I got sand in my eyes."
+			'''
+	}
+
+	BloodMissile: {
+		DisplayName: Blood Missile
+		Tooltip: Uses a part of the Brain of Cthulhu's power.
+	}
+
+	EbonyMissile: {
+		DisplayName: Ebony Missile
+		Tooltip: Uses a part of the Destroyer's power.
+	}
+
+	LightBanisher: {
+		DisplayName: Light Banisher
+		Tooltip: Uses a part of the Crimson and Corruption's power.
+	}
+
+	EyendTentacle: {
+		DisplayName: Eyend Tentacle
+		Tooltip:
+			'''
+			Inflicts confusion and bleeding on enemies hit.
+			"It hurts especially bad, really."
+			'''
+	}
+
+	AmethystSword: {
+		DisplayName: Amethyst Sword
+		Tooltip: Fires amethyst shards when hitting enemies.
+	}
+
+	SapphireSword: {
+		DisplayName: Sapphire Sword
+		Tooltip: Fires sapphire shards when hitting enemies.
+	}
+
+	TopazSword: {
+		DisplayName: Topaz Sword
+		Tooltip: Fires topaz shards when hitting enemies.
+	}
+
+	EmeraldSword: {
+		DisplayName: Emerald Sword
+		Tooltip:
+			'''
+			Has a 50% chance to fire emerald shards when attacking.
+			Has a 100% chance to fire emerald shards when hitting enemies.
+			'''
+	}
+
+	AmberSword: {
+		DisplayName: Amber Sword
+		Tooltip:
+			'''
+			Has a 75% chance to fire amber shards when attacking.
+			Has a 100% chance to fire amber shards when hitting enemies.
+			'''
+	}
+
+	RubySword: {
+		DisplayName: Ruby Sword
+		Tooltip:
+			'''
+			Has a 75% chance to fire ruby shards when attacking.
+			Has a 100% chance to fire ruby shards when hitting enemies.
+			'''
+	}
+
+	DiamondSword: {
+		DisplayName: Diamond Sword
+		Tooltip:
+			'''
+			Fires diamond shards when attacking.
+			Fires an additional diamond shard when hitting enemies.
+			'''
+	}
+
+	RainbowSword: {
+		DisplayName: Rainbow Sword
+		Tooltip:
+			'''
+			Fires seven-colored gemstone shards when attacking.
+			"Do rainbows always have to be beautiful?"
+			'''
+	}
+
+	SlimeRushBoots: {
+		DisplayName: Slime Rush Shoes
+		Tooltip:
+			'''
+			Double click the directional keys to sprint.
+			There will be a 2-second cooldown after each sprint.
+			'''
+	}
+
+	ManaStarDust: {
+		DisplayName: Magic Stardust
+		Tooltip:
+			'''
+			Sprinkle magic stardust
+			After hitting an enemy monster, recover 3 mana
+			"The beginning of everything."
+			'''
+	}
+
+	Nokia: {
+		DisplayName: Nokia
+		Tooltip: The hardest object in world......
+	}
+
+	LunarDestroyer: {
+		DisplayName: Lunar Destroyer
+		Tooltip: Explosive Moonlight Burst with Lethal Effect
+	}
+
+	TwilightRockItem: {
+		DisplayName: Twilight Stone
+		Tooltip: The Plague Stone from Heaven...
+	}
+
+	LiquescenceRockItem: {
+		DisplayName: Liquescence Sand
+		Tooltip: The Plague Sand from Heaven...
+	}
 }
 
 Projectiles: {
 	RustyHunter.DisplayName: Rusty Hunter
 	IridiumNeedle.DisplayName: Iridium Needle
 	PipeTomahawk.DisplayName: Pipe Tomahawk
+	MissileExplosion.DisplayName: Magic Missile Explosion
+	BloodMissile.DisplayName: Blood Missile
+	EbonyMissile.DisplayName: Ebony Missile
+	BloodMissileSplit.DisplayName: Blood Missile Split
+	LightBanisher.DisplayName: Light Banisher
+	AmethystShard.DisplayName: Amethyst Shard
+	SapphireShard.DisplayName: Sapphire Shard
+	TopazShard.DisplayName: Topaz Shard
+	EmeraldShard.DisplayName: Emerald Shard
+	AmberShard.DisplayName: Amber Shard
+	RubyShard.DisplayName: Ruby Shard
+	DiamondShard.DisplayName: Diamond Shard
+	RainbowShard.DisplayName: Rainbow Shard
+	EyendTentacleProjectile.DisplayName: Eyend Tentacle
+	ManaStarDust.DisplayName: Magic Stardust
+	Nokia.DisplayName: Nokia
+	LunarDestroyerSplit.DisplayName: Lunar Destroyer Split
+	LunarDestroyer.DisplayName: Lunar Destroyer
 }
+
+Tiles: {
+	TwilightRock.MapEntry: Twilight Stone
+	LiquescenceRock.MapEntry: Liquescence Sand
+}
+
+Buffs: {
+	TwilightPlague: {
+		DisplayName: Twilight Plague
+		Description: You feel your vitality rapidly deteriorating
+	}
+
+	LiquescencePlague: {
+		DisplayName: Liquescence Plague
+		Description: You feel like you are melting
+	}
+}
+
+Biomes: {
+	TwilightSurfaceBiome: {
+		DisplayName: Twilight
+		TownNPCDialogueName: the Twilight
+	}
+
+	LiquescenceSurfaceBiome: {
+		DisplayName: Liquescence
+		TownNPCDialogueName: the Liquescence
+	}
+
+	TwilightUndergroundBiome: {
+		DisplayName: Twilight Underground
+		TownNPCDialogueName: the Twilight
+	}
+
+	LiquescenceUndergroundBiome: {
+		DisplayName: Liquescence Underground
+		TownNPCDialogueName: the Liquescence
+	}
+}
+
+DeadText: {
+	TwilightPlague: forever became Twilight.
+	LiquescencePlague: became a part of the Liquescence.
+}
+
+Items.StarAmmoTooltip: Has a {0}% chance to consume {1}{2}

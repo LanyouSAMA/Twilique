@@ -1,44 +1,60 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
-using Terraria.GameContent;
-using Terraria.GameContent.Creative;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Twilique.Content.Items.AstrologerAmmo;
+using Twilique.Content.Players;
 
 namespace Twilique
 {
     public static class StarDustHelper
     {
-        /// <summary>
-        /// 星尘的消耗(玩家， 消耗种类[0为坠星，1为碎星，2为星尘])
-        /// 需要按如下格式写在CanUseItem钩子的return上：
-        /// StarDustHelper.StarDustConsume(player, 2) ? base.CanUseItem(player) : false
-        /// </summary>
+        public static int StarAmmoType(int StarType)
+        {
+            if (StarType == 0) return ItemID.FallenStar;
+            if (StarType == 1) return ModContent.ItemType<StarFragments>();
+            if (StarType == 2) return ModContent.ItemType<StarDust>();
+            return 0;
+        }
+
+        public static bool HasStarAmmo(Player player, int StarType)
+        {
+            int ammoType = StarAmmoType(StarType);
+            return ammoType > 0 && player.HasItem(ammoType);
+        }
+
+        public static bool ConsumeStarAmmo(Player player, int StarType)
+        {
+            int ammoType = StarAmmoType(StarType);
+            if (ammoType <= 0 || !player.HasItem(ammoType)) return false;
+
+            float consumption = player.GetModPlayer<AstrologerPlayer>().StarAmmoConsumption;
+            if (consumption <= 0f) return true;
+            if (consumption >= 1f || Main.rand.NextFloat() < consumption)
+            {
+                player.ConsumeItem(ammoType);
+            }
+            return true;
+        }
+
         public static bool StarDustConsume(Player player, int StarType)
         {
-            if (StarType == 0 && player.HasItem(ItemID.FallenStar))
-            {
-                player.ConsumeItem(ItemID.FallenStar);
-                return true;
-            }
-            else if (StarType == 1 && player.HasItem(ModContent.ItemType<StarFragments>()))
-            {
-                player.ConsumeItem(ModContent.ItemType<StarFragments>());
-                return true;
-            }
-            else if (StarType == 2 && player.HasItem(ModContent.ItemType<StarDust>()))
-            {
-                player.ConsumeItem(ModContent.ItemType<StarDust>());
-                return true;
-            }
-            return false;
+            return HasStarAmmo(player, StarType) && ConsumeStarAmmo(player, StarType);
+        }
+
+        public static void AddStarAmmoTooltip(List<TooltipLine> tooltips, Item item, int StarType)
+        {
+            if (Main.dedServ) return;
+
+            int ammoType = StarAmmoType(StarType);
+            if (ammoType <= 0) return;
+
+            int percent = (int)Math.Round(Main.LocalPlayer.GetModPlayer<AstrologerPlayer>().StarAmmoConsumption * 100);
+            string text = Language.GetTextValue("Mods.Twilique.Items.StarAmmoTooltip", percent, "[i:" + ammoType + "]", Lang.GetItemNameValue(ammoType));
+
+            tooltips.Add(new TooltipLine(item.ModItem.Mod, "AmmoTooltip", "[c/87CEEB:" + text + "]"));
         }
     }
 }

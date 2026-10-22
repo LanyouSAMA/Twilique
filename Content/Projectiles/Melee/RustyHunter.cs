@@ -128,7 +128,7 @@ namespace Twilique.Content.Projectiles.Melee
                     Sticking = false;
                     Main.LocalPlayer.GetModPlayer<ScreenMovePlayer>().ScreenShakeTimer = 5;
                     Main.LocalPlayer.GetModPlayer<ScreenMovePlayer>().ScreenShakeScale = 10;
-                    SoundEngine.PlaySound(new SoundStyle("Twilique/Sounds/Chain"), Projectile.position);
+                    SoundEngine.PlaySound(new SoundStyle("Twilique/Assets/Sounds/Chain"), Projectile.position);
                 }
                 else
                 {
@@ -189,7 +189,7 @@ namespace Twilique.Content.Projectiles.Melee
             }
         }
 
-        public override void Kill(int timeLeft) { }
+        public override void OnKill(int timeLeft) { }
 
         public override bool OnTileCollide(Vector2 oldVelocity)
         {

@@ -7,6 +7,9 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Include="Content\NPCs\BOSS\ArkVision0301.ncs" />
+	</ItemGroup>
 
 	<!-- References -->
 

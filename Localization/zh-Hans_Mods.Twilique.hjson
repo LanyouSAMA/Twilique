@@ -1,0 +1,250 @@
+// DamageClasses.AstrologerDamage.DisplayName: Astrologer Damage
+
+Items: {
+	StarDust: {
+		DisplayName: 星尘
+		Tooltip: ""
+	}
+
+	StarFragments: {
+		DisplayName: 碎星
+		Tooltip: ""
+	}
+
+	RustyHunter: {
+		// DisplayName: Rusty Hunter
+		// Tooltip: ""
+	}
+
+	CorrodeFractureSword: {
+		// DisplayName: Corrode Fracture Sword
+		// Tooltip: ""
+	}
+
+	IridiumNeedle: {
+		// DisplayName: Iridium Needle
+		// Tooltip: ""
+	}
+
+	TigermarkRound: {
+		// DisplayName: Tigermark Round
+		// Tooltip: ""
+	}
+
+	IridiumBar: {
+		// DisplayName: Iridium Bar
+		// Tooltip: ""
+	}
+
+	Tobacco: {
+		// DisplayName: Tobacco
+		// Tooltip: ""
+	}
+
+	PipeTomahawk: {
+		// DisplayName: Pipe Tomahawk
+		// Tooltip: ""
+	}
+
+	SandStorm: {
+		DisplayName: 沙尘暴
+		Tooltip:
+			'''
+			在沙尘暴中使用将会变得更强并且有50%的概率不消耗弹药
+			"她拿沙枪喷了我一脸沙，然后问我眼里是不是进沙子了。"
+			'''
+	}
+
+	BloodMissile: {
+		DisplayName: 血红导弹
+		Tooltip: 使用来自克苏鲁之脑的一部分力量
+	}
+
+	EbonyMissile: {
+		DisplayName: 黑檀导弹
+		Tooltip: 使用来自世界吞噬者的一部分力量
+	}
+
+	LightBanisher: {
+		DisplayName: 恶地追踪弹
+		Tooltip: 使用来自猩红与腐化的一部分力量
+	}
+
+	EyendTentacle: {
+		DisplayName: 终眼触须
+		Tooltip:
+			'''
+			击中敌怪时给予敌怪困惑和流血效果。
+			"它抽的特别疼，真的。"
+			'''
+	}
+
+	AmethystSword: {
+		DisplayName: 紫晶匕首
+		Tooltip: 在击中敌怪时会发射紫晶碎块
+	}
+
+	SapphireSword: {
+		DisplayName: 蓝玉匕首
+		Tooltip: 在击中敌怪时会发射蓝玉碎块
+	}
+
+	TopazSword: {
+		DisplayName: 黄玉匕首
+		Tooltip: 在击中敌怪时会发射黄玉碎块
+	}
+
+	EmeraldSword: {
+		DisplayName: 翡翠匕首
+		Tooltip:
+			'''
+			在攻击时有50%的概率发射翡翠碎块
+			在击中敌怪时则有100%的概率发射翡翠碎块
+			'''
+	}
+
+	AmberSword: {
+		DisplayName: 琥珀匕首
+		Tooltip:
+			'''
+			在攻击时有75%的概率发射琥珀碎块
+			在击中敌怪时则有100%的概率发射琥珀碎块
+			'''
+	}
+
+	RubySword: {
+		DisplayName: 红玉匕首
+		Tooltip:
+			'''
+			在攻击时有75%的概率发射红玉碎块
+			在击中敌怪时则有100%的概率发射红玉碎块
+			'''
+	}
+
+	DiamondSword: {
+		DisplayName: 钻石匕首
+		Tooltip:
+			'''
+			在攻击时会发射钻石碎块
+			在击中敌怪时会额外发射一个钻石碎块
+			'''
+	}
+
+	RainbowSword: {
+		DisplayName: 彩虹匕首
+		Tooltip:
+			'''
+			在攻击时会发射七彩宝石碎块
+			"难道彩虹就一定要美好吗？"
+			'''
+	}
+
+	SlimeRushBoots: {
+		DisplayName: 史莱姆冲锋靴
+		Tooltip:
+			'''
+			双击方向键以进行冲刺
+			每次冲刺后将会有两秒的冷却时间
+			'''
+	}
+
+	ManaStarDust: {
+		DisplayName: 魔力星尘
+		Tooltip:
+			'''
+			抛洒魔力星尘
+			击中敌怪后回复3点魔力
+			“一切的开始。”
+			'''
+	}
+
+	Nokia: {
+		DisplayName: 诺基亚
+		Tooltip: 史上最坚硬的物体......
+	}
+
+	LunarDestroyer: {
+		DisplayName: 月蚀
+		Tooltip: 爆裂出带有杀伤性的月光
+	}
+
+	TwilightRockItem: {
+		DisplayName: 深黯岩
+		Tooltip: 来自天堂的瘟疫之石......
+	}
+
+	LiquescenceRockItem: {
+		DisplayName: 恶蚀沙
+		Tooltip: 来自天堂的瘟疫之沙......
+	}
+}
+
+Projectiles: {
+	// RustyHunter.DisplayName: Rusty Hunter
+	// IridiumNeedle.DisplayName: Iridium Needle
+	// PipeTomahawk.DisplayName: Pipe Tomahawk
+	MissileExplosion.DisplayName: 魔法导弹爆炸
+	BloodMissile.DisplayName: 血红导弹
+	EbonyMissile.DisplayName: 黑檀导弹
+	BloodMissileSplit.DisplayName: 血红导弹碎片
+	LightBanisher.DisplayName: 恶地追踪弹
+	AmethystShard.DisplayName: 紫晶碎块
+	SapphireShard.DisplayName: 蓝玉碎块
+	TopazShard.DisplayName: 黄玉碎块
+	EmeraldShard.DisplayName: 翡翠碎块
+	AmberShard.DisplayName: 琥珀碎块
+	RubyShard.DisplayName: 红玉碎块
+	DiamondShard.DisplayName: 钻石碎块
+	RainbowShard.DisplayName: 彩虹碎块
+	EyendTentacleProjectile.DisplayName: 终眼触须
+	ManaStarDust.DisplayName: 魔力星尘
+	Nokia.DisplayName: 诺基亚
+	LunarDestroyerSplit.DisplayName: 灭月弹
+	LunarDestroyer.DisplayName: 月蚀
+}
+
+Tiles: {
+	TwilightRock.MapEntry: 深黯岩
+	LiquescenceRock.MapEntry: 恶蚀沙
+}
+
+Buffs: {
+	TwilightPlague: {
+		DisplayName: 深黯瘟疫
+		Description: 你感到自己的生命力正在流失
+	}
+
+	LiquescencePlague: {
+		DisplayName: 恶蚀瘟疫
+		Description: 你感到自己正在融化
+	}
+}
+
+Biomes: {
+	TwilightSurfaceBiome: {
+		DisplayName: 深黯之地
+		TownNPCDialogueName: 深黯
+	}
+
+	LiquescenceSurfaceBiome: {
+		DisplayName: 恶蚀之地
+		TownNPCDialogueName: 恶蚀
+	}
+
+	TwilightUndergroundBiome: {
+		DisplayName: 地下深黯之地
+		TownNPCDialogueName: 深黯
+	}
+
+	LiquescenceUndergroundBiome: {
+		DisplayName: 地下恶蚀之地
+		TownNPCDialogueName: 恶蚀
+	}
+}
+
+DeadText: {
+	TwilightPlague: 永远地黯淡了。
+	LiquescencePlague: 成为了恶蚀的一部分。
+}
+
+Items.StarAmmoTooltip: 有 {0}% 概率消耗 {1}{2}
