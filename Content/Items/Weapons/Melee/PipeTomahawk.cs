@@ -11,49 +11,49 @@ namespace Twilique.Content.Items.Weapons.Melee
 	{
 		public override void SetDefaults()
         {
-            Item.damage = 30;//ÎäÆ÷ÉËº¦
-            Item.scale = 1f;//ÎäÆ÷³ß´ç
-            Item.crit = 0;//±©»÷ÂÊ
-            Item.DamageType = DamageClass.Melee;//Ö°ÒµÉËº¦ÀàĞÍ
-            Item.width = 23;//µôÂäÎïÌùÍ¼¿í¶È
-            Item.height = 20;//µôÂäÎïÌùÍ¼¸ß¶È
-            Item.useTime = 40;//Ê¹ÓÃÊ±¼ä(1Ãë60Ö¡)
-            Item.shoot = ModContent.ProjectileType<Content.Projectiles.Melee.PipeTomahawk>();//·¢Éäµ¯Ä»
-            Item.shootSpeed = 15;//µ¯Ä»ËÙ¶È
-            Item.useAnimation = 40;//Ê¹ÓÃ¶¯»­Ê±¼ä
-            Item.useStyle = ItemUseStyleID.Swing;//Ê¹ÓÃ¶¯×÷
-            Item.knockBack = 7;//»÷ÍË
-            Item.value = Item.buyPrice(0, 20, 15, 0);//¼Û¸ñ
-            Item.rare = ItemRarityID.Blue;//Ï¡ÓĞ¶È
-            //Item.UseSound = SoundID.Item68;//Ê¹ÓÃÒôĞ§
-            Item.autoReuse = true;//×Ô¶¯Á¬·¢
-            Item.scale = 1;//ÎäÆ÷ÅĞ¶¨
-            Item.noUseGraphic = true;//È¡ÏûÎäÆ÷ÌùÍ¼
-            Item.channel = true;//³ÖĞø²Ù×÷µ¯Ä»
-            Item.noMelee = true;//È¡Ïû½üÕ½ÅĞ¶¨
+            Item.damage = 30;//æ­¦å™¨ä¼¤å®³
+            Item.scale = 1f;//æ­¦å™¨å°ºå¯¸
+            Item.crit = 0;//æš´å‡»ç‡
+            Item.DamageType = DamageClass.Melee;//èŒä¸šä¼¤å®³ç±»å‹
+            Item.width = 23;//æ‰è½ç‰©è´´å›¾å®½åº¦
+            Item.height = 20;//æ‰è½ç‰©è´´å›¾é«˜åº¦
+            Item.useTime = 40;//ä½¿ç”¨æ—¶é—´(1ç§’60å¸§)
+            Item.shoot = ModContent.ProjectileType<Content.Projectiles.Melee.PipeTomahawk>();//å‘å°„å¼¹å¹•
+            Item.shootSpeed = 15;//å¼¹å¹•é€Ÿåº¦
+            Item.useAnimation = 40;//ä½¿ç”¨åŠ¨ç”»æ—¶é—´
+            Item.useStyle = ItemUseStyleID.Swing;//ä½¿ç”¨åŠ¨ä½œ
+            Item.knockBack = 7;//å‡»é€€
+            Item.value = Item.buyPrice(0, 20, 15, 0);//ä»·æ ¼
+            Item.rare = ItemRarityID.Blue;//ç¨€æœ‰åº¦
+            //Item.UseSound = SoundID.Item68;//ä½¿ç”¨éŸ³æ•ˆ
+            Item.autoReuse = true;//è‡ªåŠ¨è¿å‘
+            Item.scale = 1;//æ­¦å™¨åˆ¤å®š
+            Item.noUseGraphic = true;//å–æ¶ˆæ­¦å™¨è´´å›¾
+            Item.channel = true;//æŒç»­æ“ä½œå¼¹å¹•
+            Item.noMelee = true;//å–æ¶ˆè¿‘æˆ˜åˆ¤å®š
         }
-        public override bool AltFunctionUse(Player player)//ÔÊĞíÊ¹ÓÃÊó±êÓÒ¼ü
+        public override bool AltFunctionUse(Player player)//å…è®¸ä½¿ç”¨é¼ æ ‡å³é”®
         {
             return true;
         }
 
-        public override bool CanUseItem(Player player)//Ê¹ÓÃÊó±êÓÒ¼üÊ±ÏûºÄÎïÆ·(µ¯Ò©)
+        public override bool CanUseItem(Player player)//ä½¿ç”¨é¼ æ ‡å³é”®æ—¶æ¶ˆè€—ç‰©å“(å¼¹è¯)
         {
-            if (player.altFunctionUse == 2)//Èç¹ûÊ¹ÓÃÊó±êÓÒ¼ü
+            if (player.altFunctionUse == 2)//å¦‚æœä½¿ç”¨é¼ æ ‡å³é”®
             {
-                Item.useAmmo = ModContent.ItemType<Content.Items.AstrologerAmmo.Tobacco>();//ÏûºÄµ¯Ò©(ÑÌ²İ)
+                Item.useAmmo = ModContent.ItemType<Content.Items.AstrologerAmmo.Tobacco>();//æ¶ˆè€—å¼¹è¯(çƒŸè‰)
                 return true;
             }
             else
             {
-                Item.useAmmo = AmmoID.None;//²»ÏûºÄµ¯Ò©(Êó±ê×ó¼ü)
+                Item.useAmmo = AmmoID.None;//ä¸æ¶ˆè€—å¼¹è¯(é¼ æ ‡å·¦é”®)
             }
                 return base.CanUseItem(player);
         }
 
-        public override bool? CanChooseAmmo(Item ammo, Player player)//Ñ¡Ôñµ¯Ò©ÏûºÄ
+        public override bool? CanChooseAmmo(Item ammo, Player player)//é€‰æ‹©å¼¹è¯æ¶ˆè€—
         {
-            if (ammo.type == ModContent.ItemType<Content.Items.AstrologerAmmo.Tobacco>())//Èç¹ûÏûºÄÑÌ²İ
+            if (ammo.type == ModContent.ItemType<Content.Items.AstrologerAmmo.Tobacco>())//å¦‚æœæ¶ˆè€—çƒŸè‰
             {
                 return true;
             }
@@ -62,9 +62,9 @@ namespace Twilique.Content.Items.Weapons.Melee
 
         public override void OnConsumeAmmo(Item ammo, Player player)
         {
-            if (ammo.type == ModContent.ItemType<Content.Items.AstrologerAmmo.Tobacco>())//Èç¹ûÏûºÄÑÌ²İ
+            if (ammo.type == ModContent.ItemType<Content.Items.AstrologerAmmo.Tobacco>())//å¦‚æœæ¶ˆè€—çƒŸè‰
             {
-                //player.AddBuff(ModContent.BuffType<Content.>(), 18000);//¶ÔÍæ¼ÒÊ©¼Ó5·ÖÖÓbuff
+                //player.AddBuff(ModContent.BuffType<Content.>(), 18000);//å¯¹ç©å®¶æ–½åŠ 5åˆ†é’Ÿbuff
             }
         }
 
@@ -85,14 +85,19 @@ namespace Twilique.Content.Items.Weapons.Melee
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();//ºÏ³ÉÅä·½Ãû×Ö
-            recipe.AddIngredient(ItemID.GoldBar, 20);//¸ü¶àºÏ³É²ÄÁÏ
-            recipe.AddIngredient(ItemID.HallowedBar, 10);// ³¬¶àºÏ³É²ÄÁÏ
-            recipe.AddIngredient(ItemID.SoulofFright, 3);//ºÏ³É²ÄÁÏ
-            recipe.AddIngredient(ItemID.SoulofMight, 3);//ºÏ³É²ÄÁÏ
-            recipe.AddIngredient(ItemID.SoulofSight, 3);//ºÏ³É²ÄÁÏ
-            recipe.AddTile(TileID.MythrilAnvil);//ÖÆ×÷Õ¾
+            Recipe recipe = CreateRecipe();//åˆæˆé…æ–¹åå­—
+            recipe.AddIngredient(ItemID.GoldBar, 20);//æ›´å¤šåˆæˆææ–™
+            recipe.AddIngredient(ItemID.HallowedBar, 10);// è¶…å¤šåˆæˆææ–™
+            recipe.AddIngredient(ItemID.SoulofFright, 3);//åˆæˆææ–™
+            recipe.AddIngredient(ItemID.SoulofMight, 3);//åˆæˆææ–™
+            recipe.AddIngredient(ItemID.SoulofSight, 3);//åˆæˆææ–™
+            recipe.AddTile(TileID.MythrilAnvil);//åˆ¶ä½œç«™
             recipe.Register();
         }
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "è“å¹½SAMA", "è“å¹½SAMA");
+		}
+
     }
 }

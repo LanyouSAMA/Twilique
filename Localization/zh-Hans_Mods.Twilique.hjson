@@ -1,4 +1,4 @@
-// DamageClasses.AstrologerDamage.DisplayName: Astrologer Damage
+DamageClasses.AstrologerDamage.DisplayName: 星术伤害
 
 Items: {
 	StarDust: {
@@ -12,8 +12,14 @@ Items: {
 	}
 
 	RustyHunter: {
-		// DisplayName: Rusty Hunter
-		// Tooltip: ""
+		DisplayName: 锈蚀捕猎者
+		Tooltip:
+			'''
+			左键发射锈蚀鱼叉，击中敌怪时将会卡在被击中的敌怪身上
+			当已经发射了五支鱼叉之后再次发射将会将鱼叉全部拉回
+			由于锈蚀的太厉害，拉回时会拖动敌怪向其使用者靠近
+			右键也可以主动收回鱼叉
+			'''
 	}
 
 	CorrodeFractureSword: {
@@ -177,10 +183,14 @@ Items: {
 		DisplayName: 恶蚀沙
 		Tooltip: 来自天堂的瘟疫之沙......
 	}
+
+	StarAmmoTooltip: 有 {0}% 概率消耗 {2}{1}
+	CodeContributionTooltip: 代码贡献：{0}
+	TextureContributionTooltip: 纹理贡献：{0}
 }
 
 Projectiles: {
-	// RustyHunter.DisplayName: Rusty Hunter
+	RustyHunter.DisplayName: 锈蚀捕猎者
 	// IridiumNeedle.DisplayName: Iridium Needle
 	// PipeTomahawk.DisplayName: Pipe Tomahawk
 	MissileExplosion.DisplayName: 魔法导弹爆炸
@@ -246,5 +256,3 @@ DeadText: {
 	TwilightPlague: 永远地黯淡了。
 	LiquescencePlague: 成为了恶蚀的一部分。
 }
-
-Items.StarAmmoTooltip: 有 {0}% 概率消耗 {1}{2}

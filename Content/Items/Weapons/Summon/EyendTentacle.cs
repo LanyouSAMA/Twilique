@@ -29,5 +29,10 @@ namespace Twilique.Content.Items.Weapons.Summon
 		public override bool MeleePrefix() {
 			return true;
 		}
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");
+		}
+
 	}
 }

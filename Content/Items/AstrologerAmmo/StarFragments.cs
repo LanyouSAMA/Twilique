@@ -26,5 +26,10 @@ namespace Twilique.Content.Items.AstrologerAmmo
             recipe.AddIngredient(ItemID.FallenStar, 1);
             recipe.Register();
         }
+        public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+        {
+            ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");
+        }
+
     }
 }

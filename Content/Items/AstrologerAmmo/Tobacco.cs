@@ -8,22 +8,27 @@ namespace Twilique.Content.Items.AstrologerAmmo
 	{
 		public override void SetDefaults()
         {
-            Item.scale = 1;//ÎïÆ·³ß´ç
-            Item.DamageType = DamageClass.Melee;//Ö°ÒµÉËº¦ÀàĞÍ
-            Item.width = 16;//µôÂäÎïÌùÍ¼¿í¶È
-            Item.height = 16;//µôÂäÎïÌùÍ¼¸ß¶È
-            Item.maxStack = 9999;//ÎïÆ·¶ÑµşÉÏÏŞ
-            Item.consumable = true;//±ê¼ÇÎïÆ·¿ÉÏûºÄ
-            //Item.ammo = ModContent.ItemType<>();//µ¯Ò©ÀàĞÍ
-            Item.value = Item.buyPrice(0, 0, 50, 0);//¼Û¸ñ
-            Item.rare = ItemRarityID.Red;//Ï¡ÓĞ¶È
+            Item.scale = 1;//ç‰©å“å°ºå¯¸
+            Item.DamageType = DamageClass.Melee;//èŒä¸šä¼¤å®³ç±»å‹
+            Item.width = 16;//æ‰è½ç‰©è´´å›¾å®½åº¦
+            Item.height = 16;//æ‰è½ç‰©è´´å›¾é«˜åº¦
+            Item.maxStack = 9999;//ç‰©å“å †å ä¸Šé™
+            Item.consumable = true;//æ ‡è®°ç‰©å“å¯æ¶ˆè€—
+            //Item.ammo = ModContent.ItemType<>();//å¼¹è¯ç±»å‹
+            Item.value = Item.buyPrice(0, 0, 50, 0);//ä»·æ ¼
+            Item.rare = ItemRarityID.Red;//ç¨€æœ‰åº¦
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();//ºÏ³ÉÅä·½Ãû×Ö
-            recipe.AddIngredient(ItemID.EmptyBullet, 1);//ºÏ³É²ÄÁÏ
-            recipe.AddTile(TileID.Campfire);//ÖÆ×÷Õ¾
+            Recipe recipe = CreateRecipe();//åˆæˆé…æ–¹åå­—
+            recipe.AddIngredient(ItemID.EmptyBullet, 1);//åˆæˆææ–™
+            recipe.AddTile(TileID.Campfire);//åˆ¶ä½œç«™
             recipe.Register();
         }
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "A08D_k1wA", "A08D_k1wA");
+		}
+
     }
 }

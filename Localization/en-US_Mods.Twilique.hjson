@@ -13,7 +13,13 @@ Items: {
 
 	RustyHunter: {
 		DisplayName: Rusty Hunter
-		Tooltip: ""
+		Tooltip:
+			'''
+			Left-click to fire rusty harpoons that lodge in enemies they hit
+			Firing again after five harpoons have been fired retracts them all
+			Their heavy rust causes them to drag enemies toward the wielder as they retract
+			Right-click to retract the harpoons manually
+			'''
 	}
 
 	CorrodeFractureSword: {
@@ -177,6 +183,10 @@ Items: {
 		DisplayName: Liquescence Sand
 		Tooltip: The Plague Sand from Heaven...
 	}
+
+	StarAmmoTooltip: Has a {0}% chance to consume {2}{1}
+	CodeContributionTooltip: Code Contribution: {0}
+	TextureContributionTooltip: Texture Contribution: {0}
 }
 
 Projectiles: {
@@ -246,5 +256,3 @@ DeadText: {
 	TwilightPlague: forever became Twilight.
 	LiquescencePlague: became a part of the Liquescence.
 }
-
-Items.StarAmmoTooltip: Has a {0}% chance to consume {1}{2}

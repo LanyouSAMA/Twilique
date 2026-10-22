@@ -42,6 +42,7 @@ namespace Twilique.Content.Items.Weapons.Astrologer
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips) {
 			StarDustHelper.AddStarAmmoTooltip(tooltips, Item, 2);
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");
 		}
 
 		public override void AddRecipes() {

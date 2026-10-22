@@ -55,5 +55,10 @@ namespace Twilique.Content.Items.Weapons.Melee
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
+        public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+        {
+            ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");
+        }
+
     }
 }

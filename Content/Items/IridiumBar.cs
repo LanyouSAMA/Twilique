@@ -8,19 +8,24 @@ namespace Twilique.Content.Items
 	{
 		public override void SetDefaults()
         {
-            Item.scale = 1;//ÎïÆ·³ß´ç
-            Item.width = 32;//µôÂäÎïÌùÍ¼¿í¶È
-            Item.height = 32;//µôÂäÎïÌùÍ¼¸ß¶È
-            Item.maxStack = 9999;//ÎïÆ·¶ÑµşÉÏÏŞ
-            Item.consumable = true;//±ê¼ÇÎïÆ·¿ÉÏûºÄ»ò¿É·ÅÖÃ
-            Item.useStyle = ItemUseStyleID.Swing;//Ê¹ÓÃ¶¯×÷
-            Item.placeStyle = ItemUseStyleID.Swing;//·ÅÖÃ¶¯×÷
-            Item.createTile = ModContent.TileType<Content.Tiles.IridiumBarBlock>();//·ÅÖÃÎï¿é
-            Item.useTime = 10;//Ê¹ÓÃÊ±¼ä
-            Item.useAnimation = 15;//Ê¹ÓÃ¶¯»­Ê±¼ä
-            Item.value = Item.buyPrice(0, 7, 0, 0);//¼Û¸ñ
-            Item.rare = ItemRarityID.LightPurple;//Ï¡ÓĞ¶È
-            Item.autoReuse = true;//×Ô¶¯Á¬·¢
+            Item.scale = 1;//ç‰©å“å°ºå¯¸
+            Item.width = 32;//æ‰è½ç‰©è´´å›¾å®½åº¦
+            Item.height = 32;//æ‰è½ç‰©è´´å›¾é«˜åº¦
+            Item.maxStack = 9999;//ç‰©å“å †å ä¸Šé™
+            Item.consumable = true;//æ ‡è®°ç‰©å“å¯æ¶ˆè€—æˆ–å¯æ”¾ç½®
+            Item.useStyle = ItemUseStyleID.Swing;//ä½¿ç”¨åŠ¨ä½œ
+            Item.placeStyle = ItemUseStyleID.Swing;//æ”¾ç½®åŠ¨ä½œ
+            Item.createTile = ModContent.TileType<Content.Tiles.IridiumBarBlock>();//æ”¾ç½®ç‰©å—
+            Item.useTime = 10;//ä½¿ç”¨æ—¶é—´
+            Item.useAnimation = 15;//ä½¿ç”¨åŠ¨ç”»æ—¶é—´
+            Item.value = Item.buyPrice(0, 7, 0, 0);//ä»·æ ¼
+            Item.rare = ItemRarityID.LightPurple;//ç¨€æœ‰åº¦
+            Item.autoReuse = true;//è‡ªåŠ¨è¿å‘
         }
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "A08D_k1wA", "A08D_k1wA");
+		}
+
     }
 }

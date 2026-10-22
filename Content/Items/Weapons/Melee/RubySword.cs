@@ -50,10 +50,15 @@ namespace Twilique.Content.Items.Weapons.Melee
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.GoldOre, 10);
+            recipe.AddIngredient(ItemID.GoldBar, 10);
             recipe.AddIngredient(ItemID.Ruby, 8);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
+        public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+        {
+            ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");
+        }
+
     }
 }

@@ -18,5 +18,10 @@ namespace Twilique.Content.Items.Placeable
 			Item.DefaultToPlaceableTile(ModContent.TileType<TwilightRock>());
 			Item.placeStyle = 0;
 		}
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");
+		}
+
 	}
 }

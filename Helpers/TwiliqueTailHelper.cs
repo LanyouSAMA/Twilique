@@ -60,6 +60,9 @@ namespace Twilique
             Main.graphics.GraphicsDevice.Textures[0] = Tail;
             Main.graphics.GraphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleList, Vx.ToArray(), 0, Vx.Count / 3);
         }
+        /// <summary>
+        /// 拖尾绘制的顶点信息(位置，颜色，纹理坐标)
+        /// </summary>
         public struct CustomVertexInfo : IVertexType
         {
             private static VertexDeclaration _vertexDeclaration = new VertexDeclaration(new VertexElement[3]
@@ -81,6 +84,10 @@ namespace Twilique
             /// </summary>
             public Vector3 TexCoord;
 
+            /// <summary>
+            /// 创建拖尾顶点(位置，颜色，纹理坐标)
+            /// 需要按如下格式调用：new CustomVertexInfo(position, color, texCoord)
+            /// </summary>
             public CustomVertexInfo(Vector2 position, Color color, Vector3 texCoord)
             {
                 this.Position = position;
@@ -88,6 +95,9 @@ namespace Twilique
                 this.TexCoord = texCoord;
             }
 
+            /// <summary>
+            /// 获取拖尾顶点的声明
+            /// </summary>
             public VertexDeclaration VertexDeclaration => _vertexDeclaration;
         }
     }

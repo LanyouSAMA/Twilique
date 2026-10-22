@@ -8,34 +8,39 @@ namespace Twilique.Content.Items.Weapons.Melee
 	{
 		public override void SetDefaults()
         {
-            Item.damage = 20;//ÎäÆ÷ÉËº¦
-            Item.scale = 1;//ÎäÆ÷³ß´ç
-            Item.crit = 21;//±©»÷ÂÊ
-            Item.DamageType = DamageClass.Melee;//Ö°ÒµÉËº¦ÀàĞÍ
-            Item.width = 42;//µôÂäÎïÌùÍ¼¿í¶È
-            Item.height = 42;//µôÂäÎïÌùÍ¼¸ß¶È
-            Item.useTime = 8;//Ê¹ÓÃÊ±¼ä(1Ãë60Ö¡,ÓÃÄã¿´µÄ¶®µÄ»°À´Ëµ¾ÍÊÇÊıÖµÔ½Ğ¡Ô½¿ì)
-            Item.shoot = ModContent.ProjectileType<Content.Projectiles.Melee.IridiumNeedle>();//·¢Éäµ¯Ä»
-            Item.shootSpeed = 4f;//µ¯Ä»ËÙ¶È(ÓÃÄã¿´µÄ¶®µÄ»°À´Ëµ¾ÍÊÇÊıÖµÔ½´óÔ½¿ì)
-            Item.useAnimation = 8;//Ê¹ÓÃ¶¯»­Ê±¼ä
-            Item.useStyle = ItemUseStyleID.Shoot;//Ê¹ÓÃ¶¯×÷
-            Item.knockBack = 3;//»÷ÍË 
-            Item.value = Item.buyPrice(0, 8, 0, 0);//¼Û¸ñ
-            Item.rare = ItemRarityID.LightPurple;//Ï¡ÓĞ¶È
-            Item.UseSound = SoundID.Item1;//Ê¹ÓÃÒôĞ§
-            Item.autoReuse = true;//×Ô¶¯Á¬·¢
-            Item.scale = 1;//ÎäÆ÷ÅĞ¶¨
-            Item.noUseGraphic = true;//È¡ÏûÎäÆ÷ÌùÍ¼
-            Item.channel = true;//³ÖĞø²Ù×÷µ¯Ä»
-            Item.noMelee = true;//È¡Ïû½üÕ½ÅĞ¶¨
+            Item.damage = 20;//æ­¦å™¨ä¼¤å®³
+            Item.scale = 1;//æ­¦å™¨å°ºå¯¸
+            Item.crit = 21;//æš´å‡»ç‡
+            Item.DamageType = DamageClass.Melee;//èŒä¸šä¼¤å®³ç±»å‹
+            Item.width = 42;//æ‰è½ç‰©è´´å›¾å®½åº¦
+            Item.height = 42;//æ‰è½ç‰©è´´å›¾é«˜åº¦
+            Item.useTime = 8;//ä½¿ç”¨æ—¶é—´(1ç§’60å¸§,ç”¨ä½ çœ‹çš„æ‡‚çš„è¯æ¥è¯´å°±æ˜¯æ•°å€¼è¶Šå°è¶Šå¿«)
+            Item.shoot = ModContent.ProjectileType<Content.Projectiles.Melee.IridiumNeedle>();//å‘å°„å¼¹å¹•
+            Item.shootSpeed = 4f;//å¼¹å¹•é€Ÿåº¦(ç”¨ä½ çœ‹çš„æ‡‚çš„è¯æ¥è¯´å°±æ˜¯æ•°å€¼è¶Šå¤§è¶Šå¿«)
+            Item.useAnimation = 8;//ä½¿ç”¨åŠ¨ç”»æ—¶é—´
+            Item.useStyle = ItemUseStyleID.Shoot;//ä½¿ç”¨åŠ¨ä½œ
+            Item.knockBack = 3;//å‡»é€€ 
+            Item.value = Item.buyPrice(0, 8, 0, 0);//ä»·æ ¼
+            Item.rare = ItemRarityID.LightPurple;//ç¨€æœ‰åº¦
+            Item.UseSound = SoundID.Item1;//ä½¿ç”¨éŸ³æ•ˆ
+            Item.autoReuse = true;//è‡ªåŠ¨è¿å‘
+            Item.scale = 1;//æ­¦å™¨åˆ¤å®š
+            Item.noUseGraphic = true;//å–æ¶ˆæ­¦å™¨è´´å›¾
+            Item.channel = true;//æŒç»­æ“ä½œå¼¹å¹•
+            Item.noMelee = true;//å–æ¶ˆè¿‘æˆ˜åˆ¤å®š
         }
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();//ºÏ³ÉÅä·½Ãû×Ö
-            recipe.AddIngredient(ModContent.ItemType<IridiumBar>(), 20);//ºÏ³É²ÄÁÏ
-            recipe.AddTile(TileID.MythrilAnvil);//ÖÆ×÷Õ¾
+            Recipe recipe = CreateRecipe();//åˆæˆé…æ–¹åå­—
+            recipe.AddIngredient(ModContent.ItemType<IridiumBar>(), 20);//åˆæˆææ–™
+            recipe.AddTile(TileID.MythrilAnvil);//åˆ¶ä½œç«™
             recipe.Register();
         }
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "è“å¹½SAMA", "è“å¹½SAMA");
+		}
+
     }
 }

@@ -10,35 +10,40 @@ namespace Twilique.Content.Items.Weapons.Melee
 	{
 		public override void SetDefaults()
         {
-            Item.damage = 18;//ÎäÆ÷ÉËº¦
-            Item.crit = 0;//±©»÷ÂÊ
-            Item.scale = 1;//ÎäÆ÷³ß´ç
-            Item.DamageType = DamageClass.Melee;//Ö°ÒµÉËº¦ÀàĞÍ
-            Item.width = 40;//µôÂäÎïÌùÍ¼¿í¶È
-            Item.height = 40;//µôÂäÎïÌùÍ¼¸ß¶È
-            Item.useTime = 20;//Ê¹ÓÃÊ±¼ä(1Ãë60Ö¡)
-            //Item.shoot = ModContent.ProjectileType<Content.Projectiles.Melee.Pollutant>();//·¢Éäµ¯Ä»
-            Item.shootSpeed = 10f;//µ¯Ä»ËÙ¶È
-            Item.useAnimation = 20;//Ê¹ÓÃ¶¯»­Ê±¼ä
-            Item.useStyle = ItemUseStyleID.Swing;//Ê¹ÓÃ¶¯×÷
-            Item.knockBack = 5;//»÷ÍË
-            Item.value = Item.buyPrice(0, 1, 50, 0);//¼Û¸ñ
-            Item.rare = ItemRarityID.Blue;//Ï¡ÓĞ¶È
-            Item.UseSound = SoundID.Item1;//Ê¹ÓÃÒôĞ§
-            Item.scale = 1;//ÎäÆ÷ÅĞ¶¨
-            Item.autoReuse = false;//×Ô¶¯Á¬·¢
+            Item.damage = 18;//æ­¦å™¨ä¼¤å®³
+            Item.crit = 0;//æš´å‡»ç‡
+            Item.scale = 1;//æ­¦å™¨å°ºå¯¸
+            Item.DamageType = DamageClass.Melee;//èŒä¸šä¼¤å®³ç±»å‹
+            Item.width = 40;//æ‰è½ç‰©è´´å›¾å®½åº¦
+            Item.height = 40;//æ‰è½ç‰©è´´å›¾é«˜åº¦
+            Item.useTime = 20;//ä½¿ç”¨æ—¶é—´(1ç§’60å¸§)
+            //Item.shoot = ModContent.ProjectileType<Content.Projectiles.Melee.Pollutant>();//å‘å°„å¼¹å¹•
+            Item.shootSpeed = 10f;//å¼¹å¹•é€Ÿåº¦
+            Item.useAnimation = 20;//ä½¿ç”¨åŠ¨ç”»æ—¶é—´
+            Item.useStyle = ItemUseStyleID.Swing;//ä½¿ç”¨åŠ¨ä½œ
+            Item.knockBack = 5;//å‡»é€€
+            Item.value = Item.buyPrice(0, 1, 50, 0);//ä»·æ ¼
+            Item.rare = ItemRarityID.Blue;//ç¨€æœ‰åº¦
+            Item.UseSound = SoundID.Item1;//ä½¿ç”¨éŸ³æ•ˆ
+            Item.scale = 1;//æ­¦å™¨åˆ¤å®š
+            Item.autoReuse = false;//è‡ªåŠ¨è¿å‘
         }
 
         /*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Projectile.NewProjectile(player.GetSource_FromThis(), Item.Center, Item.velocity, ModContent.ProjectileType<Content.Projectiles.Melee.Pollutant>(), Item.damage, Item.knockBack, player.whoAmI); //¸ü¼Ó·ºÓÃµÄ×ÔÓÉµ¯Ä»Éú³É·½Ê½
+            Projectile.NewProjectile(player.GetSource_FromThis(), Item.Center, Item.velocity, ModContent.ProjectileType<Content.Projectiles.Melee.Pollutant>(), Item.damage, Item.knockBack, player.whoAmI); //æ›´åŠ æ³›ç”¨çš„è‡ªç”±å¼¹å¹•ç”Ÿæˆæ–¹å¼
 
-            for (int i = 0; i < 3; i++) //Ö´ĞĞ3´Î·¢ÉäÆ«×ªµ¯Ä»
+            for (int i = 0; i < 3; i++) //æ‰§è¡Œ3æ¬¡å‘å°„åè½¬å¼¹å¹•
             {
-                Projectile.NewProjectile(source, position, velocity.RotatedBy(Main.rand.NextFloat(-0.25f, 0.25f)) //½«µ¯Ä»Æ«×ªÖÁ-0.25µ½0.25Ö®¼äµÄËæ»úÖµ
+                Projectile.NewProjectile(source, position, velocity.RotatedBy(Main.rand.NextFloat(-0.25f, 0.25f)) //å°†å¼¹å¹•åè½¬è‡³-0.25åˆ°0.25ä¹‹é—´çš„éšæœºå€¼
                     , ModContent.ProjectileType<Content.Projectiles.Melee.Pollutant>(), damage, knockback, player.whoAmI);
             }
             return true;
         }*/
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "A08D_k1wA", "A08D_k1wA");
+		}
+
     }
 }

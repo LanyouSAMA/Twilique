@@ -40,5 +40,10 @@ namespace Twilique.Content.Items.Accessories
 				Time = 120;
 			}
 		}
+		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
+		{
+			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");
+		}
+
 	}
 }
