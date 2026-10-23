@@ -175,12 +175,12 @@ Items: {
 	}
 
 	TwilightRockItem: {
-		DisplayName: 深黯岩
+		DisplayName: 星黯岩
 		Tooltip: 来自天堂的瘟疫之石......
 	}
 
 	LiquescenceRockItem: {
-		DisplayName: 恶蚀沙
+		DisplayName: 蚀疫沙
 		Tooltip: 来自天堂的瘟疫之沙......
 	}
 
@@ -214,45 +214,45 @@ Projectiles: {
 }
 
 Tiles: {
-	TwilightRock.MapEntry: 深黯岩
-	LiquescenceRock.MapEntry: 恶蚀沙
+	TwilightRock.MapEntry: 星黯岩
+	LiquescenceRock.MapEntry: 蚀疫沙
 }
 
 Buffs: {
 	TwilightPlague: {
-		DisplayName: 深黯瘟疫
+		DisplayName: 星黯瘟疫
 		Description: 你感到自己的生命力正在流失
 	}
 
 	LiquescencePlague: {
-		DisplayName: 恶蚀瘟疫
+		DisplayName: 流蚀瘟疫
 		Description: 你感到自己正在融化
 	}
 }
 
 Biomes: {
 	TwilightSurfaceBiome: {
-		DisplayName: 深黯之地
-		TownNPCDialogueName: 深黯
+		DisplayName: 星黯之地
+		TownNPCDialogueName: 星黯
 	}
 
 	LiquescenceSurfaceBiome: {
-		DisplayName: 恶蚀之地
-		TownNPCDialogueName: 恶蚀
+		DisplayName: 蚀疫之地
+		TownNPCDialogueName: 蚀疫
 	}
 
 	TwilightUndergroundBiome: {
-		DisplayName: 地下深黯之地
-		TownNPCDialogueName: 深黯
+		DisplayName: 地下星黯之地
+		TownNPCDialogueName: 星黯
 	}
 
 	LiquescenceUndergroundBiome: {
-		DisplayName: 地下恶蚀之地
-		TownNPCDialogueName: 恶蚀
+		DisplayName: 地下蚀疫之地
+		TownNPCDialogueName: 蚀疫
 	}
 }
 
 DeadText: {
 	TwilightPlague: 永远地黯淡了。
-	LiquescencePlague: 成为了恶蚀的一部分。
+	LiquescencePlague: 成为了蚀疫的一部分。
 }
