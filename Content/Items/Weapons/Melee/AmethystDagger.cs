@@ -5,36 +5,36 @@ using Terraria.ModLoader;
 
 namespace Twilique.Content.Items.Weapons.Melee
 {
-    public class SapphireSword : ModItem
+    public class AmethystDagger : ModItem
     {
         public override void SetDefaults()
         {
-            Item.damage = 7;
+            Item.damage = 5;
             Item.crit = 0;
             Item.DamageType = DamageClass.Melee;
-            Item.width = 24;
-            Item.height = 28;
-            Item.scale = 1.4f;
-            Item.useTime = 17;
-            Item.useAnimation = 17;
+            Item.width = 48;
+            Item.height = 52;
+            Item.scale = 1f;
+            Item.useTime = 19;
+            Item.useAnimation = 19;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.knockBack = 4f;
-            Item.value = Item.sellPrice(0, 0, 20, 0);
-            Item.value = Item.buyPrice(0, 0, 80, 0);
-            Item.rare = ItemRarityID.Blue;
+            Item.knockBack = 3.25f;
+            Item.value = Item.sellPrice(0, 0, 4, 0);
+            Item.value = Item.buyPrice(0, 0, 16, 0);
+            Item.rare = ItemRarityID.White;
             Item.UseSound = SoundID.Item1;
-            Item.autoReuse = true;
+            Item.autoReuse = false;
             Item.useTurn = true;
         }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            Projectile p = Projectile.NewProjectileDirect(player.GetSource_OnHit(target), player.Center, Vector2.Normalize(Main.MouseWorld - player.Center) * 6.5f, ModContent.ProjectileType<Projectiles.Melee.SapphireShard>(), Item.damage, Item.knockBack, player.whoAmI);
+            Projectile p = Projectile.NewProjectileDirect(player.GetSource_OnHit(target), player.Center, Vector2.Normalize(Main.MouseWorld - player.Center) * 6, ModContent.ProjectileType<Projectiles.Melee.AmethystShard>(), Item.damage, Item.knockBack, player.whoAmI);
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.SilverBar, 10);
-            recipe.AddIngredient(ItemID.Sapphire, 8);
+            recipe.AddIngredient(ItemID.CopperBar, 10);
+            recipe.AddIngredient(ItemID.Amethyst, 8);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

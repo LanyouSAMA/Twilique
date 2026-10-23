@@ -6,16 +6,16 @@ using Terraria.ModLoader;
 
 namespace Twilique.Content.Items.Weapons.Melee
 {
-    public class RubySword : ModItem
+    public class AmberDagger : ModItem
     {
         public override void SetDefaults()
         {
             Item.damage = 10;
             Item.crit = 0;
             Item.DamageType = DamageClass.Melee;
-            Item.width = 24;
-            Item.height = 28;
-            Item.scale = 1.4f;
+            Item.width = 48;
+            Item.height = 52;
+            Item.scale = 1f;
             Item.useTime = 14;
             Item.useAnimation = 14;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -23,7 +23,7 @@ namespace Twilique.Content.Items.Weapons.Melee
             Item.value = Item.sellPrice(0, 0, 30, 0);
             Item.value = Item.buyPrice(0, 1, 20, 0);
             Item.rare = ItemRarityID.Blue;
-            Item.shoot = ModContent.ProjectileType<Projectiles.Melee.RubyShard>();
+            Item.shoot = ModContent.ProjectileType<Projectiles.Melee.AmberShard>();
             Item.shootSpeed = 9;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
@@ -50,8 +50,8 @@ namespace Twilique.Content.Items.Weapons.Melee
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.GoldBar, 10);
-            recipe.AddIngredient(ItemID.Ruby, 8);
+            recipe.AddIngredient(ItemID.FossilOre, 15);
+            recipe.AddIngredient(ItemID.Amber, 8);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

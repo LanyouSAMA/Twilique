@@ -5,16 +5,16 @@ using Terraria.ModLoader;
 
 namespace Twilique.Content.Items.Weapons.Melee
 {
-    public class TopazSword : ModItem
+    public class TopazDagger : ModItem
     {
         public override void SetDefaults()
         {
             Item.damage = 6;
             Item.crit = 0;
             Item.DamageType = DamageClass.Melee;
-            Item.width = 24;
-            Item.height = 28;
-            Item.scale = 1.4f;
+            Item.width = 48;
+            Item.height = 52;
+            Item.scale = 1f;
             Item.useTime = 18;
             Item.useAnimation = 18;
             Item.useStyle = ItemUseStyleID.Swing;

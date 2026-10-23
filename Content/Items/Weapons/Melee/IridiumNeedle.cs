@@ -6,6 +6,11 @@ namespace Twilique.Content.Items.Weapons.Melee
 {
 	public class IridiumNeedle : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			ItemID.Sets.Spears[Type] = true;
+		}
+
 		public override void SetDefaults()
         {
             Item.damage = 20;//武器伤害
@@ -26,7 +31,6 @@ namespace Twilique.Content.Items.Weapons.Melee
             Item.autoReuse = true;//自动连发
             Item.scale = 1;//武器判定
             Item.noUseGraphic = true;//取消武器贴图
-            Item.channel = true;//持续操作弹幕
             Item.noMelee = true;//取消近战判定
         }
 
@@ -37,6 +41,8 @@ namespace Twilique.Content.Items.Weapons.Melee
             recipe.AddTile(TileID.MythrilAnvil);//制作站
             recipe.Register();
         }
+
+		public override bool CanUseItem(Player player) => player.ownedProjectileCounts[Item.shoot] <= 0;
 		public override void ModifyTooltips(System.Collections.Generic.List<TooltipLine> tooltips)
 		{
 			ContributionTooltipHelper.AddContributionTooltips(tooltips, Item, "蓝幽SAMA", "蓝幽SAMA");

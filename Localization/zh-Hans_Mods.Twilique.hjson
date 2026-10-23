@@ -85,22 +85,22 @@ Items: {
 			'''
 	}
 
-	AmethystSword: {
+	AmethystDagger: {
 		DisplayName: 紫晶匕首
 		Tooltip: 在击中敌怪时会发射紫晶碎块
 	}
 
-	SapphireSword: {
+	SapphireDagger: {
 		DisplayName: 蓝玉匕首
 		Tooltip: 在击中敌怪时会发射蓝玉碎块
 	}
 
-	TopazSword: {
+	TopazDagger: {
 		DisplayName: 黄玉匕首
 		Tooltip: 在击中敌怪时会发射黄玉碎块
 	}
 
-	EmeraldSword: {
+	EmeraldDagger: {
 		DisplayName: 翡翠匕首
 		Tooltip:
 			'''
@@ -109,7 +109,7 @@ Items: {
 			'''
 	}
 
-	AmberSword: {
+	AmberDagger: {
 		DisplayName: 琥珀匕首
 		Tooltip:
 			'''
@@ -118,7 +118,7 @@ Items: {
 			'''
 	}
 
-	RubySword: {
+	RubyDagger: {
 		DisplayName: 红玉匕首
 		Tooltip:
 			'''
@@ -127,7 +127,7 @@ Items: {
 			'''
 	}
 
-	DiamondSword: {
+	DiamondDagger: {
 		DisplayName: 钻石匕首
 		Tooltip:
 			'''
@@ -136,7 +136,7 @@ Items: {
 			'''
 	}
 
-	RainbowSword: {
+	RainbowDagger: {
 		DisplayName: 彩虹匕首
 		Tooltip:
 			'''

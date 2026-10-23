@@ -5,16 +5,16 @@ using Terraria.ModLoader;
 
 namespace Twilique.Content.Items.Weapons.Melee
 {
-    public class RainbowSword : ModItem
+    public class RainbowDagger : ModItem
     {
         public override void SetDefaults()
         {
             Item.damage = 30;
             Item.crit = 0;
             Item.DamageType = DamageClass.Melee;
-            Item.width = 24;
-            Item.height = 28;
-            Item.scale = 1.4f;
+            Item.width = 48;
+            Item.height = 56;
+            Item.scale = 1f;
             Item.useTime = 10;
             Item.useAnimation = 10;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -77,13 +77,13 @@ namespace Twilique.Content.Items.Weapons.Melee
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<AmethystSword>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<TopazSword>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<SapphireSword>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<EmeraldSword>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<AmberSword>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<RubySword>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<DiamondSword>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<AmethystDagger>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<TopazDagger>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<SapphireDagger>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<EmeraldDagger>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<AmberDagger>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<RubyDagger>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<DiamondDagger>(), 1);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

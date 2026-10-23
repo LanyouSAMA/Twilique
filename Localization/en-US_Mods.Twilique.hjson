@@ -85,23 +85,23 @@ Items: {
 			'''
 	}
 
-	AmethystSword: {
-		DisplayName: Amethyst Sword
+	AmethystDagger: {
+		DisplayName: Amethyst Dagger
 		Tooltip: Fires amethyst shards when hitting enemies.
 	}
 
-	SapphireSword: {
-		DisplayName: Sapphire Sword
+	SapphireDagger: {
+		DisplayName: Sapphire Dagger
 		Tooltip: Fires sapphire shards when hitting enemies.
 	}
 
-	TopazSword: {
-		DisplayName: Topaz Sword
+	TopazDagger: {
+		DisplayName: Topaz Dagger
 		Tooltip: Fires topaz shards when hitting enemies.
 	}
 
-	EmeraldSword: {
-		DisplayName: Emerald Sword
+	EmeraldDagger: {
+		DisplayName: Emerald Dagger
 		Tooltip:
 			'''
 			Has a 50% chance to fire emerald shards when attacking.
@@ -109,8 +109,8 @@ Items: {
 			'''
 	}
 
-	AmberSword: {
-		DisplayName: Amber Sword
+	AmberDagger: {
+		DisplayName: Amber Dagger
 		Tooltip:
 			'''
 			Has a 75% chance to fire amber shards when attacking.
@@ -118,8 +118,8 @@ Items: {
 			'''
 	}
 
-	RubySword: {
-		DisplayName: Ruby Sword
+	RubyDagger: {
+		DisplayName: Ruby Dagger
 		Tooltip:
 			'''
 			Has a 75% chance to fire ruby shards when attacking.
@@ -127,8 +127,8 @@ Items: {
 			'''
 	}
 
-	DiamondSword: {
-		DisplayName: Diamond Sword
+	DiamondDagger: {
+		DisplayName: Diamond Dagger
 		Tooltip:
 			'''
 			Fires diamond shards when attacking.
@@ -136,8 +136,8 @@ Items: {
 			'''
 	}
 
-	RainbowSword: {
-		DisplayName: Rainbow Sword
+	RainbowDagger: {
+		DisplayName: Rainbow Dagger
 		Tooltip:
 			'''
 			Fires seven-colored gemstone shards when attacking.
